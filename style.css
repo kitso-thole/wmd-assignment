@@ -1,0 +1,1294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.8;
+  color: #1E3A8A;
+  font-family: 'Lora', serif;
+  background: #FFFFFF;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 6%;
+  background: linear-gradient(45deg, rgba(30,58,138,0.9), rgba(59,130,246,0.7));
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(59,130,246,0.5);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 70px;
+  margin-right: 15px;
+  filter: drop-shadow(0 0 10px #3B82F6);
+}
+
+.company-name {
+  font-family: 'Cinzel', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 0 0 10px #3B82F6;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: 700;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #3B82F6;
+  transform: scale(1.1);
+  text-shadow: 0 0 10px #3B82F6;
+  border-bottom: 2px solid #3B82F6;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Hero Section (index.html) */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 80px;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/botswana-banner.jpg') no-repeat center center/cover;
+  z-index: 0;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30,58,138,0.5);
+  z-index: 0;
+}
+
+.hero-content {
+  max-width: 1000px;
+  z-index: 1;
+  padding: 40px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.hero p {
+  font-size: 26px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.search-bar {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+
+.search-bar input,
+.search-bar select {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  font-size: 18px;
+  background: transparent;
+  color: #1E3A8A;
+  min-width: 200px;
+}
+
+.search-bar button {
+  padding: 15px 35px;
+  border: none;
+  background: #3B82F6;
+  color: #FFFFFF;
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.search-bar button:hover {
+  background: #1E3A8A;
+  transform: scale(1.02);
+}
+
+/* Listings Hero Section */
+.listings-hero {
+  height: 80vh;
+  background: url('images/botswana-hero.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 80px;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.listings-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30,58,138,0.5);
+  z-index: 0;
+}
+
+.listings-hero-content {
+  max-width: 1000px;
+  z-index: 1;
+  padding: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.listings-hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.listings-hero p {
+  font-size: 22px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+/* About Hero Section */
+.about-hero {
+  height: 80vh;
+  background: url('images/gaborone-villa.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 80px;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30,58,138,0.5);
+  z-index: 0;
+}
+
+.about-hero-content {
+  max-width: 1000px;
+  z-index: 1;
+  padding: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.about-hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.about-hero p {
+  font-size: 22px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+/* Agents Hero Section */
+.agents-hero {
+  height: 80vh;
+  background: url('images/maun-agent.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 80px;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.agents-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30,58,138,0.5);
+  z-index: 0;
+}
+
+.agents-hero-content {
+  max-width: 1000px;
+  z-index: 1;
+  padding: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.agents-hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.agents-hero p {
+  font-size: 22px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+/* Contact Hero Section */
+.contact-hero {
+  height: 80vh;
+  background: url('images/gaborone-office.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 80px;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30,58,138,0.5);
+  z-index: 0;
+}
+
+.contact-hero-content {
+  max-width: 1000px;
+  z-index: 1;
+  padding: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.contact-hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.contact-hero p {
+  font-size: 22px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+/* Feedback Hero Section */
+.feedback-hero {
+  height: 80vh;
+  background: url('images/feedback-bg.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 80px;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.feedback-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30,58,138,0.5);
+  z-index: 0;
+}
+
+.feedback-hero-content {
+  max-width: 1000px;
+  z-index: 1;
+  padding: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.feedback-hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.feedback-hero p {
+  font-size: 22px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #3B82F6;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 10px;
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #1E3A8A;
+  transform: translateY(-3px);
+}
+
+/* Non-Form Sections with Estate Background */
+.featured,
+.listings,
+.mission-values,
+.about-stats,
+.history,
+.team-spotlight,
+.community-involvement,
+.developments,
+.agents,
+.testimonials,
+.why-choose-us,
+.cta {
+  padding: 120px 6%;
+  background: url('images/estate-bg.jpg') no-repeat center center/cover;
+  position: relative;
+  text-align: center;
+}
+
+.featured::before,
+.listings::before,
+.mission-values::before,
+.about-stats::before,
+.history::before,
+.team-spotlight::before,
+.community-involvement::before,
+.developments::before,
+.agents::before,
+.testimonials::before,
+.why-choose-us::before,
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30,58,138,0.3);
+  z-index: 0;
+}
+
+.featured h2,
+.listings h2,
+.mission-values h2,
+.about-stats h2,
+.history h2,
+.team-spotlight h2,
+.community-involvement h2,
+.developments h2,
+.agents h2,
+.testimonials h2,
+.why-choose-us h2,
+.cta h2,
+.featured .listing-grid,
+.listings .listing-grid,
+.mission-values .values-grid,
+.team-spotlight .team-container,
+.community-involvement .community-container,
+.developments .development-grid,
+.agents .agent-grid,
+.testimonials .testimonial-container,
+.why-choose-us .why-grid,
+.cta .cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.featured h2,
+.listings h2,
+.mission-values h2,
+.about-stats h2,
+.history h2,
+.team-spotlight h2,
+.community-involvement h2,
+.developments h2,
+.agents h2,
+.testimonials h2,
+.why-choose-us h2,
+.cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: #1E3A8A;
+  margin-bottom: 30px;
+}
+
+.featured p,
+.listings p,
+.mission-values p,
+.about-stats p,
+.history p,
+.team-spotlight p,
+.community-involvement p,
+.developments p,
+.agents p,
+.testimonials p,
+.why-choose-us p,
+.cta p {
+  font-size: 20px;
+  color: #1E3A8A;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+/* Form Sections (Preserve Background) */
+.search-filter,
+.contact,
+.feedback {
+  padding: 120px 6%;
+  background: url('images/botswana-bg.jpg') no-repeat center center/cover;
+  position: relative;
+  text-align: center;
+}
+
+.search-filter::before,
+.contact::before,
+.feedback::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30,58,138,0.3);
+  z-index: 0;
+}
+
+.search-filter h2,
+.contact h2,
+.feedback h2,
+.search-filter form,
+.contact .contact-container,
+.feedback .feedback-container {
+  position: relative;
+  z-index: 1;
+}
+
+.search-filter h2,
+.contact h2,
+.feedback h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: #1E3A8A;
+  margin-bottom: 30px;
+}
+
+.search-filter p,
+.contact p,
+.feedback p {
+  font-size: 20px;
+  color: #1E3A8A;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+.listing-grid,
+.agent-grid,
+.development-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 30px;
+}
+
+.listing-card,
+.agent-card,
+.development-card {
+  background: #FFFFFF;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.listing-card:hover,
+.agent-card:hover,
+.development-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.listing-card img,
+.agent-card img,
+.development-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.listing-card h3,
+.agent-card h3,
+.development-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1E3A8A;
+  padding: 15px 15px 10px;
+}
+
+.listing-card p,
+.agent-card p,
+.development-card p {
+  padding: 0 15px 15px;
+  color: #1E3A8A;
+  font-size: 18px;
+}
+
+.listing-card .features,
+.development-card .features {
+  padding: 0 15px 15px;
+  font-size: 16px;
+  color: #1E3A8A;
+  margin-bottom: 10px;
+}
+
+.agent-card .role {
+  padding: 0 15px 10px;
+  font-size: 16px;
+  color: #3B82F6;
+  font-weight: 500;
+}
+
+.view-details,
+.contact-agent {
+  display: block;
+  padding: 12px;
+  background: #3B82F6;
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.view-details:hover,
+.contact-agent:hover {
+  background: #1E3A8A;
+}
+
+/* Search Filter */
+.search-filter form {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+
+.search-filter input,
+.search-filter select {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  font-size: 18px;
+  background: transparent;
+  color: #1E3A8A;
+  min-width: 200px;
+}
+
+.search-filter button {
+  padding: 15px 35px;
+  border: none;
+  background: #3B82F6;
+  color: #FFFFFF;
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.search-filter button:hover {
+  background: #1E3A8A;
+  transform: scale(1.02);
+}
+
+/* Mission and Values */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.value-card {
+  background: #FFFFFF;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.value-card i {
+  font-size: 40px;
+  color: #3B82F6;
+  margin-bottom: 20px;
+}
+
+.value-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1E3A8A;
+  margin-bottom: 15px;
+}
+
+.value-card p {
+  font-size: 18px;
+  color: #1E3A8A;
+}
+
+/* Team Spotlight, History, Community Involvement */
+.team-container,
+.history-container,
+.community-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.team-container:hover,
+.history-container:hover,
+.community-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Contact Container */
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  transition: transform 0.3s ease;
+}
+
+.contact-container:hover {
+  transform: translateY(-5px);
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-form h3,
+.contact-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1E3A8A;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #1E3A8A;
+  border-radius: 10px;
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  color: #1E3A8A;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 15px 35px;
+  border: none;
+  background: #3B82F6;
+  color: #FFFFFF;
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #1E3A8A;
+  transform: scale(1.02);
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-info p {
+  font-size: 18px;
+  color: #1E3A8A;
+  margin-bottom: 15px;
+}
+
+.contact-info i {
+  color: #3B82F6;
+  margin-right: 10px;
+}
+
+/* Feedback Section */
+.feedback-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.feedback-container:hover {
+  transform: translateY(-5px);
+}
+
+.feedback-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.feedback-form h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1E3A8A;
+  margin-bottom: 20px;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #1E3A8A;
+  border-radius: 10px;
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  color: #1E3A8A;
+}
+
+.feedback-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.feedback-form button {
+  padding: 15px 35px;
+  border: none;
+  background: #3B82F6;
+  color: #FFFFFF;
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.feedback-form button:hover {
+  background: #1E3A8A;
+  transform: scale(1.02);
+}
+
+.feedback-form .form-message {
+  font-size: 16px;
+  color: #1E3A8A;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Star Rating */
+.rating {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  direction: rtl; /* Right-to-left for intuitive star filling */
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 30px;
+  color: #d1d5db; /* Gray for unselected stars */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.rating label i {
+  margin: 0 5px;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #3B82F6; /* Sky blue for selected/hovered stars */
+}
+
+/* Why Choose Us */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.why-card {
+  background: rgba(255,255,255,0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+}
+
+.why-card i {
+  font-size: 40px;
+  color: #3B82F6;
+  margin-bottom: 20px;
+}
+
+.why-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1E3A8A;
+  margin-bottom: 15px;
+}
+
+.why-card p {
+  font-size: 18px;
+  color: #1E3A8A;
+}
+
+/* Testimonials */
+.testimonial-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.testimonial {
+  background: rgba(255,255,255,0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial p {
+  font-size: 18px;
+  color: #1E3A8A;
+  margin-bottom: 20px;
+}
+
+.testimonial h4 {
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #3B82F6;
+}
+
+/* Footer */
+footer {
+  padding: 60px 6%;
+  background: #1E3A8A;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-column p,
+.footer-column a {
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.footer-column a:hover {
+  color: #3B82F6;
+}
+
+.social-links a {
+  color: #FFFFFF;
+  margin: 0 15px;
+  font-size: 24px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #3B82F6;
+  transform: scale(1.1);
+}
+
+footer p.copyright {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 6%;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: linear-gradient(45deg, rgba(30,58,138,0.9), rgba(59,130,246,0.7));
+    backdrop-filter: blur(8px);
+    padding-top: 80px;
+    align-items: center;
+    animation: slideIn 0.5s ease;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  .nav-links a {
+    font-size: 24px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .hero,
+  .listings-hero,
+  .about-hero,
+  .agents-hero,
+  .contact-hero,
+  .feedback-hero {
+    height: 60vh;
+  }
+
+  .hero h1,
+  .listings-hero h2,
+  .about-hero h2,
+  .agents-hero h2,
+  .contact-hero h2,
+  .feedback-hero h2 {
+    font-size: 48px;
+  }
+
+  .hero p,
+  .listings-hero p,
+  .about-hero p,
+  .agents-hero p,
+  .contact-hero p,
+  .feedback-hero p {
+    font-size: 20px;
+  }
+
+  .search-filter h2,
+  .featured h2,
+  .listings h2,
+  .mission-values h2,
+  .history h2,
+  .team-spotlight h2,
+  .community-involvement h2,
+  .developments h2,
+  .agents h2,
+  .testimonials h2,
+  .why-choose-us h2,
+  .contact h2,
+  .feedback h2,
+  .cta h2 {
+    font-size: 40px;
+  }
+
+  .search-bar,
+  .search-filter form {
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .search-bar input,
+  .search-bar select,
+  .search-bar button,
+  .search-filter input,
+  .search-filter select,
+  .search-filter button {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .listing-card img,
+  .agent-card img,
+  .development-card img {
+    height: 260px;
+  }
+
+  .values-grid,
+  .stats-grid,
+  .why-grid,
+  .testimonial-container,
+  .agent-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-container,
+  .feedback-container {
+    flex-direction: column;
+  }
+
+  .rating {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .rating label {
+    font-size: 24px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1,
+  .listings-hero h2,
+  .about-hero h2,
+  .agents-hero h2,
+  .contact-hero h2,
+  .feedback-hero h2 {
+    font-size: 40px;
+  }
+
+  .hero p,
+  .listings-hero p,
+  .about-hero p,
+  .agents-hero p,
+  .contact-hero p,
+  .feedback-hero p {
+    font-size: 18px;
+  }
+
+  .hero-content,
+  .listings-hero-content,
+  .about-hero-content,
+  .agents-hero-content,
+  .contact-hero-content,
+  .feedback-hero-content {
+    padding: 20px;
+  }
+
+  .search-filter h2,
+  .featured h2,
+  .listings h2,
+  .mission-values h2,
+  .history h2,
+  .team-spotlight h2,
+  .community-involvement h2,
+  .developments h2,
+  .agents h2,
+  .testimonials h2,
+  .why-choose-us h2,
+  .contact h2,
+  .feedback h2,
+  .cta h2 {
+    font-size: 36px;
+  }
+
+  .listing-card img,
+  .agent-card img,
+  .development-card img {
+    height: 220px;
+  }
+
+  .cta-button {
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+
+  .rating label {
+    font-size: 20px;
+  }
+}
