@@ -802,35 +802,6 @@ body {
   text-align: center;
 }
 
-/* Star Rating */
-.rating {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  direction: rtl; /* Right-to-left for intuitive star filling */
-}
-
-.rating input {
-  display: none;
-}
-
-.rating label {
-  font-size: 30px;
-  color: #d1d5db; /* Gray for unselected stars */
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.rating label i {
-  margin: 0 5px;
-}
-
-.rating input:checked ~ label,
-.rating label:hover,
-.rating label:hover ~ label {
-  color: #3B82F6; /* Sky blue for selected/hovered stars */
-}
-
 /* Why Choose Us */
 .why-grid {
   display: grid;
